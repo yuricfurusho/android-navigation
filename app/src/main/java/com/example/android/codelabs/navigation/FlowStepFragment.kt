@@ -22,11 +22,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 
 /**
  * Presents how multiple steps flow could be implemented.
  */
 class FlowStepFragment : Fragment() {
+
+    val args: FlowStepFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,10 +38,15 @@ class FlowStepFragment : Fragment() {
     ): View? {
         setHasOptionsMenu(true)
 
+        // old style:
 //        val flowStepNumber = arguments?.getInt("flowStepNumber")
 
-        val safeArgs = arguments?.let { FlowStepFragmentArgs.fromBundle(it) }
-        val flowStepNumber = safeArgs?.flowStepNumber
+        // new style
+//        val safeArgs = arguments?.let { FlowStepFragmentArgs.fromBundle(it) }
+//        val flowStepNumber = safeArgs?.flowStepNumber
+
+        // new style with ktx:
+        val flowStepNumber = args.flowStepNumber
 
         return when (flowStepNumber) {
             2 -> inflater.inflate(R.layout.flow_step_two_fragment, container, false)
