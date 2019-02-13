@@ -35,12 +35,10 @@ class FlowStepFragment : Fragment() {
     ): View? {
         setHasOptionsMenu(true)
 
-        val flowStepNumber = arguments?.getInt("flowStepNumber")
+//        val flowStepNumber = arguments?.getInt("flowStepNumber")
 
-        // TODO STEP 8 - Use type-safe arguments - remove previous line!
-//        val safeArgs = FlowStepFragmentArgs.fromBundle(arguments)
-//        val flowStepNumber = safeArgs.flowStepNumber
-        // TODO END STEP 8
+        val safeArgs = arguments?.let { FlowStepFragmentArgs.fromBundle(it) }
+        val flowStepNumber = safeArgs?.flowStepNumber
 
         return when (flowStepNumber) {
             2 -> inflater.inflate(R.layout.flow_step_two_fragment, container, false)

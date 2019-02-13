@@ -20,7 +20,6 @@ import android.os.Bundle
 import android.view.*
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 
@@ -49,17 +48,15 @@ class HomeFragment : Fragment() {
             }
         }
 
-        // notice these are 2 ways in which navigation can be setup, with unit, lambdas and navigate
-        // oe with clicklistener, and createnavigate
-        //OPTION 1
         view.findViewById<Button>(R.id.navigate_destination_button)?.setOnClickListener {
             findNavController().navigate(R.id.flow_step_one_dest, null, options)
         }
 
-        // OPTION 2
-        view.findViewById<Button>(R.id.navigate_action_button)?.setOnClickListener(
-                Navigation.createNavigateOnClickListener(R.id.next_action, null)
-        )
+        view.findViewById<Button>(R.id.navigate_action_button)?.setOnClickListener {
+            val action = HomeFragmentDirections.nextAction()
+            action.flowStepNumber = 2
+            findNavController().navigate(action)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
