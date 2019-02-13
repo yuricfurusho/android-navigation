@@ -54,17 +54,17 @@ android {
 dependencies {
 
     // Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlinVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.21"
 
-    implementation 'com.google.android.material:material:' + rootProject.materialVersion
-    implementation 'androidx.appcompat:appcompat:' + rootProject.appCompatVersion
-    implementation 'androidx.cardview:cardview:' + rootProject.cardViewVersion
-    implementation 'androidx.recyclerview:recyclerview:' + rootProject.recyclerVersion
+    implementation 'com.google.android.material:material:1.1.0-alpha03'
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha02'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha02'
 
-    implementation 'androidx.constraintlayout:constraintlayout:' + rootProject.constraintLayoutVersion
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
 
     // Navigation
-    implementation 'android.arch.navigation:navigation-fragment-ktx:' + rootProject.navigationVersion
-    implementation 'android.arch.navigation:navigation-ui-ktx:' + rootProject.navigationVersion
+    implementation 'android.arch.navigation:navigation-fragment-ktx:1.0.0-beta02'
+    implementation 'android.arch.navigation:navigation-ui-ktx:1.0.0-beta02'
 
 }
